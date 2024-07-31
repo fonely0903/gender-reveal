@@ -20,12 +20,14 @@
 }
 #girl:checked ~ label {
   background-color: #dbc6cf;
+  border: 2px solid #c3b0b8;
 }
 #boy ~ label {
   background-color: #b4e3f1;
 }
 #boy:checked ~ label {
   background-color: #a2ccd8;
+  border: 2px solid #90b5c0;
 }
 #submitBtn {
 
