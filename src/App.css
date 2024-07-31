@@ -1,5 +1,6 @@
 #container {
   height: 100vh;
+  padding-top: 36px;
   background-color: #f8f6ee;
 }
 #gender-radios {
@@ -27,5 +28,5 @@
   background-color: #a2ccd8;
 }
 #submitBtn {
-  
+
 }
