@@ -1,0 +1,31 @@
+#container {
+  height: 100vh;
+  background-color: #f8f6ee;
+}
+#gender-radios {
+  gap: 20px;
+}
+.gender-label {
+  width: 120px;
+  height: 120px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  font-weight: 600 !important;
+}
+#girl ~ label {
+  background-color: #f4dde6;
+}
+#girl:checked ~ label {
+  background-color: #dbc6cf;
+}
+#boy ~ label {
+  background-color: #b4e3f1;
+}
+#boy:checked ~ label {
+  background-color: #a2ccd8;
+}
+#submitBtn {
+  
+}
