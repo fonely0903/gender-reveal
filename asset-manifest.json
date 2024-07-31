@@ -1,15 +1,25 @@
 {
   "files": {
-    "main.css": "/gender-reveal/static/css/main.de60b943.css",
-    "main.js": "/gender-reveal/static/js/main.e538b0b3.js",
-    "static/js/453.70dbfc2a.chunk.js": "/gender-reveal/static/js/453.70dbfc2a.chunk.js",
+    "main.css": "/gender-reveal/static/css/main.4e5af868.chunk.css",
+    "main.js": "/gender-reveal/static/js/main.b083c469.chunk.js",
+    "main.js.map": "/gender-reveal/static/js/main.b083c469.chunk.js.map",
+    "runtime-main.js": "/gender-reveal/static/js/runtime-main.b3a11f98.js",
+    "runtime-main.js.map": "/gender-reveal/static/js/runtime-main.b3a11f98.js.map",
+    "static/css/2.1fb90f1e.chunk.css": "/gender-reveal/static/css/2.1fb90f1e.chunk.css",
+    "static/js/2.d92c6cbb.chunk.js": "/gender-reveal/static/js/2.d92c6cbb.chunk.js",
+    "static/js/2.d92c6cbb.chunk.js.map": "/gender-reveal/static/js/2.d92c6cbb.chunk.js.map",
+    "static/js/3.67841554.chunk.js": "/gender-reveal/static/js/3.67841554.chunk.js",
+    "static/js/3.67841554.chunk.js.map": "/gender-reveal/static/js/3.67841554.chunk.js.map",
     "index.html": "/gender-reveal/index.html",
-    "main.de60b943.css.map": "/gender-reveal/static/css/main.de60b943.css.map",
-    "main.e538b0b3.js.map": "/gender-reveal/static/js/main.e538b0b3.js.map",
-    "453.70dbfc2a.chunk.js.map": "/gender-reveal/static/js/453.70dbfc2a.chunk.js.map"
+    "static/css/2.1fb90f1e.chunk.css.map": "/gender-reveal/static/css/2.1fb90f1e.chunk.css.map",
+    "static/css/main.4e5af868.chunk.css.map": "/gender-reveal/static/css/main.4e5af868.chunk.css.map",
+    "static/js/2.d92c6cbb.chunk.js.LICENSE.txt": "/gender-reveal/static/js/2.d92c6cbb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/css/main.de60b943.css",
-    "static/js/main.e538b0b3.js"
+    "static/js/runtime-main.b3a11f98.js",
+    "static/css/2.1fb90f1e.chunk.css",
+    "static/js/2.d92c6cbb.chunk.js",
+    "static/css/main.4e5af868.chunk.css",
+    "static/js/main.b083c469.chunk.js"
   ]
 }
