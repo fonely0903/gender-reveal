@@ -12,16 +12,18 @@ import {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const router = createHashRouter([
-  {
-    path: "gender-reveal",
-    element: <App />,
-  },
-  {
-    path: "result",
-    element: <Result />,
-  }
-]);
+const router = createHashRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+    },
+    {
+      path: "/result",
+      element: <Result />,
+    }
+  ]
+);
 
 root.render(
   <React.StrictMode>

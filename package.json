@@ -1,7 +1,7 @@
 {
   "name": "gender-reveal",
   "version": "0.1.0",
-  "homepage": "https://fonely0903.github.io/gender-reveal",
+  "homepage": "https://fonely0903.github.io/gender-reveal/#",
   "private": true,
   "dependencies": {
     "@babel/compat-data": "7.19.4",
