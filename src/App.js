@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import ListGroup from 'react-bootstrap/ListGroup';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
+import Spinner from 'react-bootstrap/Spinner';
 
 import './App.css';
 
@@ -15,6 +15,7 @@ const serviceAccountAuth = new JWT({
 
 const App = props => {
   const [name, setName] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const submit = async (name, guess) => {
     const doc = new GoogleSpreadsheet(process.env.SHEET_ID, serviceAccountAuth);
@@ -26,23 +27,27 @@ const App = props => {
   const onSubmitClick = useCallback(() => {
     const selectedValue = document.querySelector('input[name="genders"]:checked')  
     const guess = selectedValue?.value;
-    submit(name, guess);
+    setIsLoading(true);
+    submit(name, guess).then(() => {
+      window.location = 'result';
+      setIsLoading(false);
+    });
   }, [name]);
   
   return (
     <div class='container-fluid text-center' id="container">
-      <div class='p-3'>
-        <h1>小果仁的性別預測</h1>
+      <div class='sector p-3'>
+        <h1 id="title_1" class="title">Gender Reveal</h1>
         <p class='text-start'>沒有實體的性別趴，只有爸媽自製的小預測網站～好玩就好，男生女生都是我們的寶</p>
       </div>
-      <div class='p-3 mb-2'>
-        <h2>來自媽媽的提示</h2>
-        <ListGroup>
-          <ListGroup.Item>媽媽喜歡吃酸</ListGroup.Item>
-          <ListGroup.Item>媽媽皮膚變好</ListGroup.Item>
-          <ListGroup.Item>戒指吊繩前後擺動</ListGroup.Item>
-          <ListGroup.Item>清宮圖說女生</ListGroup.Item>
-        </ListGroup>
+      <div class='hint-sector sector px-3 mb-3'>
+        <h6 id='hintTitle'>媽媽的提示:</h6>
+        <div id='hint'>
+          <h5>1. 媽媽喜歡吃酸</h5>
+          <h5>2. 媽媽皮膚變好</h5>
+          <h5>3. 戒指吊繩前後擺動</h5>
+          <h5>4. 清宮圖說女生</h5>
+        </div>
       </div>
       <Form class='p-3'>
         <Form.Group controlId='genderForm.Gender'>
@@ -59,15 +64,15 @@ const App = props => {
           </div>
         </Form.Group>
         <Form.Group controlId='genderForm.Name' class='mt-3'>
-          <Form.Label>你是誰？</Form.Label>
-          <Form.Control type="text" placeholder="浩仁" onChange={e => setName(e.target.value)} value={name}  />
+          <Form.Label>留下你的名字～</Form.Label>
+          <Form.Control style={{borderRadius: '30px', padding: '12px'}} type="text" placeholder="浩仁 / Apple" onChange={e => setName(e.target.value)} value={name}  />
         </Form.Group>
-        <Button size='lg' className="mt-4" id="submitBtn" variant='outline-secondary' onClick={onSubmitClick}>看結果！</Button>
+        <Button size='lg' className="mt-4" id="submitBtn" variant='outline-secondary' onClick={onSubmitClick}>
+          {isLoading && <Spinner animation="border" />}看結果！
+        </Button>
       </Form>
-      
-      
     </div>
-  );
+  )
 };
 
 export default App;

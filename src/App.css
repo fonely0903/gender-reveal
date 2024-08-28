@@ -1,14 +1,45 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../src/fonts/JasonHandwriting2.ttf') format('truetype');
+  /* Add additional font formats if necessary */
+  /* Specify the correct path to the font files */
+}
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
+
+#hint {
+  font-family: 'CustomFont', sans-serif;
+  text-align: left;
+}
+
+#hintTitle {
+  font-size: 20px;
+}
+
+.title {
+  font-family: "Matemasie", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  margin-bottom: 36px;
+}
+
+.hint-sector {
+  display: flex;
+  gap: 16px;
+}
+
 #container {
   height: 100vh;
   padding-top: 36px;
   background-color: #f8f6ee;
 }
 #gender-radios {
+  margin-top: 16px;
   gap: 20px;
 }
 .gender-label {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -16,19 +47,23 @@
   font-weight: 600 !important;
 }
 #girl ~ label {
-  background-color: #f4dde6;
+  background-color: #EECAD5;
 }
 #girl:checked ~ label {
-  background-color: #dbc6cf;
-  border: 2px solid #c3b0b8;
+  background-color: #d6b5bf;
+  border: 2px solid #bea1aa;
 }
 #boy ~ label {
-  background-color: #b4e3f1;
+  background-color: #D1E9F6;
 }
 #boy:checked ~ label {
-  background-color: #a2ccd8;
-  border: 2px solid #90b5c0;
+  background-color: #bcd1dd;
+  border: 2px solid #a7bac4;
 }
 #submitBtn {
-
+  border-radius: 30px;
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
 }
