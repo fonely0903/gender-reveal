@@ -29,7 +29,7 @@ const App = props => {
     const guess = selectedValue?.value;
     setIsLoading(true);
     submit(name, guess).then(() => {
-      window.location = '/#/result';
+      window.location = 'gender-reveal/#/result';
       setIsLoading(false);
     });
   }, [name]);
@@ -47,6 +47,7 @@ const App = props => {
           <h5>2. 媽媽皮膚變好</h5>
           <h5>3. 戒指吊繩前後擺動</h5>
           <h5>4. 清宮圖說女生</h5>
+          <h5>5. 同事摸肚子說是尖的</h5>
         </div>
       </div>
       <Form class='p-3'>
