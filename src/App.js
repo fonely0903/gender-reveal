@@ -29,7 +29,7 @@ const App = props => {
     const guess = selectedValue?.value;
     setIsLoading(true);
     submit(name, guess).then(() => {
-      window.location = 'gender-reveal/#/result';
+      window.location = '#/result';
       setIsLoading(false);
     });
   }, [name]);
