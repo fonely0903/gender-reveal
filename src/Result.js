@@ -14,10 +14,11 @@ const serviceAccountAuth = new JWT({
 });
 
 const PHOEBE_IMG_PATH = '/gender-reveal/Phoebe.gif';
-const JENSEN_IMG_PATH = '/gender-reveal/Jensen.gif';
+
 const Result = props => {
     const [series, setSeries] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [showName, setShowName] = useState(false);
     const options = {
         chart: {
             type: 'bar',
@@ -62,6 +63,14 @@ const Result = props => {
         }
         loadData()
     }, [])
+
+    useEffect(() => {
+        if (!isLoading) {
+            setTimeout(() => {
+                setShowName(true);
+            }, 1670)
+        }
+    }, [isLoading])
     return (
         <>
             <div class='container-fluid text-center' id="container">
@@ -74,18 +83,20 @@ const Result = props => {
                             colors={['#EECAD5', '#D1E9F6']}
                             colorsTime={[2, 0]}
                             onComplete={() => setIsLoading(false)}
+                            size={180}
                         >
-                            {({ remainingTime }) => remainingTime}
+                            {({ remainingTime }) => <h1>{remainingTime}</h1>}
                         </CountdownCircleTimer>
                     </div>
                 ) : (
                     <>
-                        <h2 class="mt-3">Phoebe!</h2>
-                        <Image src={PHOEBE_IMG_PATH} fluid />
-                        <ReactApexChart options={options} series={series} type="bar" height={150} />
+                        <div style={{height: '30px', marginTop: '16px'}}>
+                            {showName && <h2 class="mt-3">Phoebe!</h2>} 
+                        </div>
+                        <Image src={PHOEBE_IMG_PATH} fluid className='mb-4' />
+                        <ReactApexChart className='mt-4' options={options} series={series} type="bar" height={150} />
                     </>
                 )}
-                
             </div>
         </>
     );
